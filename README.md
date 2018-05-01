@@ -5,3 +5,4 @@
 - Dependency Injection is done using Dagger2
 - Callbacks from Fragment are a delegated to Activity using callback Interface
 - ConstraintLayout is used to design the UI
+- Use key-store (located in the root folder) to sign the app.
