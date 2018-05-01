@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">IntellimentPoc</string>
+    <string name="item1">Item1</string>
+    <string name="item2">Item2</string>
+    <string name="item3">Item3</string>
+    <string name="item4">Item4</string>
+    <string name="item5">Item5</string>
+    <string name="fragment_name">Fragment %d</string>
+    <string name="textView1">TextView1</string>
+    <string name="textView2">TextView2</string>
+    <string name="textView3">TextView3</string>
+    <string name="buttonRed">Red</string>
+    <string name="buttonBlue">Blue</string>
+    <string name="buttonGreen">Green</string>
+    <string name="fragment_test_1">Test1</string>
+    <string name="fragment_test_2">Test2</string>
+    <string name="mode_of_transport">Mode of Transport:</string>
+    <string name="navigate">Navigate</string>
+    <string name="car">Car- %s Mins</string>
+    <string name="train">Train- %s Mins</string>
+
+    <string-array name="item_list">
+        <item>Item1</item>
+        <item>Item2</item>
+        <item>Item3</item>
+        <item>Item4</item>
+        <item>Item5</item>
+    </string-array>
+</resources>

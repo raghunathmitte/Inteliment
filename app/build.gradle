@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'inteliment'
+            keyPassword 'inteliment'
+            storeFile file('/Users/n1120461/Work/IntellimentPoc/key-store.jks')
+            storePassword 'inteliment'
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "au.com.inteliment.poc"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.config
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.config
+        }
+        release {
+            applicationIdSuffix ".release"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'android.arch.lifecycle:viewmodel:1.1.1'
+    implementation 'android.arch.lifecycle:livedata:1.1.1'
+    implementation 'android.arch.lifecycle:reactivestreams:1.1.1'
+    implementation 'com.google.dagger:dagger:2.11'
+    implementation 'com.google.dagger:dagger-android:2.10'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.1'
+    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    kapt 'com.google.dagger:dagger-compiler:2.11'
+    kapt 'com.google.dagger:dagger-android-processor:2.10'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+}
